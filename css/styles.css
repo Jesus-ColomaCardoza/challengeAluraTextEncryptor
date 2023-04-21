@@ -1,0 +1,73 @@
+*,::after,::before{
+    box-sizing: border-box;
+    
+}
+body{
+    margin: 0;;
+}
+img{
+    max-width: 100%;;
+}
+.title,.text-encrypter{
+    text-align: center;
+}
+.text-encrypter{
+    width: 90%;
+    margin: 0 auto;
+}
+.form-text-encrypter{
+
+}
+
+.form-text-encrypter__field{
+    
+}
+.form-text-encrypter__text{
+    resize: none;
+}
+.form-text-encrypter__text,
+.button--encrypt,
+.button--copy,
+.button--decrypt{
+    width: 100%;
+}
+
+/* buttons */
+.button{
+    border: none;
+    padding: 1em 0;
+    border-radius: 15px;
+    font-size: 1em;
+    
+}
+.button--encrypt,.button--decrypt{
+    margin: .5em 0;
+}
+.button--encrypt{
+    background-color: #47d;
+    color: #fff;
+}
+.button--decrypt,.button--copy{
+    border: 1px #aaa solid;
+    background-color: #fff;
+}
+/*------------------*/
+
+
+
+
+.output-zone{
+    margin: 1em 0;
+    border-radius: 10px;
+    box-shadow: 0 0 1em   #aaa;
+    padding: 1em 3em;
+}
+.output-zone__contanierimage{
+    display: none;
+}
+.output-zone__warning{
+    font-size: 2rem;
+}
+.output-zone__message{
+    color: #999;
+}

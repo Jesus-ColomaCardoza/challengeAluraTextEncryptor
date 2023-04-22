@@ -8,24 +8,24 @@ body{
 img{
     max-width: 100%;;
 }
-.title,.text-encrypter{
+.title,.text-encryptor{
     text-align: center;
 }
-.text-encrypter{
+.text-encryptor{
     width: 90%;
     margin: 0 auto;
 }
-.form-text-encrypter{
+/* .form-text-encryptor{
 
 }
 
-.form-text-encrypter__field{
+.form-text-encryptor__field{
     
-}
-.form-text-encrypter__text{
+} */
+.form-text-encryptor__text{
     resize: none;
 }
-.form-text-encrypter__text,
+.form-text-encryptor__text,
 .button--encrypt,
 .button--copy,
 .button--decrypt{

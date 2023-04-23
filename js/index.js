@@ -1,8 +1,8 @@
 const textArea=document.getElementById('form-text-encryptor__text');
-const message=document.getElementById('output-zone__message');
-
+const outputText=document.getElementById('output-zone__text');
 const formTextEncrypter=document.getElementById('form-text-encryptor');
-
+const buttonCopy=document.getElementById('button--copy');
+const outputDescription=document.getElementById('output-zone__description');
 
 const keys=['ai','enter','imes','ober','ufat'];
 
@@ -13,27 +13,67 @@ formTextEncrypter.addEventListener('click',(e)=>{
     if (e.target.classList.contains('button--encrypt')) {
         let encryptText;      
         if (textArea.value!='') {
-            //we use regular expresions to validate lowercase letters and no accents
-            text=textArea.value.trim()
-            encryptText=encrypt(text);
-            printOutputZone(encryptText);
+            text=textArea.value.trim();
+            console.log(text);
+            if (validateText(text)) {
+                encryptText=encrypt(text);
+                printOutputZone(encryptText);                
+            }else{
+                console.log('Incorrect text, strange characters or uppercase letters');
+            }
+            hideDescription();
+            showButton(buttonCopy);
         }else{
-            console.log('Fill out the field');
+            console.log('Error encrypting, Fill out the field!!!');
+            resetOutputText();
+            showDescription();
+            hideButton(buttonCopy);
         }
     }else if (e.target.classList.contains('button--decrypt')) {
         let decryptText;      
         if (textArea.value!='') {
-            //we use regular expresions to validate lowercase letters and no accents
             text=textArea.value.trim()
-            decryptText=decrypt(text);
-            printOutputZone(decryptText);
+            if (validateText(text)) {
+                decryptText=decrypt(text);
+                printOutputZone(decryptText);
+            }else{
+                console.log('Incorrect text, strange characters or uppercase letters');
+            }
+            hideDescription();
+            showButton(buttonCopy);
         }else{
-            console.log('Fill out the field');
+            console.log('Error decrypting, Fill out the field!!!');
+            resetOutputText();
+            showDescription();
+            hideButton(buttonCopy);
         }
     }
-
+})
+buttonCopy.addEventListener('click',()=>{
+    let text=outputText.textContent;
+    if (text!='') {
+        // console.log(text);
+        navigator.clipboard.writeText(text)
+    }else{
+        console.log('There is not text');
+    }
 })
 
+const resetOutputText=()=>{
+    outputText.textContent='';
+}
+const hideDescription=()=>{
+    outputDescription.classList.add('output-zone__description--hide')   
+}
+const showDescription=()=>{
+    outputDescription.classList.remove('output-zone__description--hide')   
+}
+const showButton=(button)=>{
+    button.classList.add('button--shown');
+}
+const hideButton=(button)=>{
+    button.classList.remove('button--shown');
+}   
 const decrypt=(text)=>{
     let decryptText=text;
     if (decryptText.includes('ai')) {
@@ -80,5 +120,11 @@ const encrypt=(text)=>{
     return encryptText;
 }
 const printOutputZone=(text)=>{
-    message.textContent=text;
+    outputText.textContent=text;
+}
+const validateText=(text)=>{
+    let validate;
+    const regex= /^([a-z0-9]*\s*\ñ*[a-z0-9]*)*$/gm ;
+    regex.test(text) ? validate=true : validate=false;
+    return validate;
 }

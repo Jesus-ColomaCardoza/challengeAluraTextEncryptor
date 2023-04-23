@@ -24,6 +24,10 @@ img{
 } */
 .form-text-encryptor__text{
     resize: none;
+    font-size: 1.8rem;
+}
+.form-text-encryptor__text::placeholder{
+    font-size: 1.8rem;
 }
 .form-text-encryptor__text,
 .button--encrypt,
@@ -38,7 +42,14 @@ img{
     padding: 1em 0;
     border-radius: 15px;
     font-size: 1em;
-    
+    transition: .5s all;
+    cursor: pointer;
+}
+.button:hover{
+    filter: brightness(.9);
+}
+.button:active{
+    transform:scale(.9);
 }
 .button--encrypt,.button--decrypt{
     margin: .5em 0;
@@ -51,6 +62,12 @@ img{
     border: 1px #aaa solid;
     background-color: #fff;
 }
+.button--copy{
+    display: none;
+}
+.button--shown{
+    display: inline;
+}
 /*------------------*/
 
 
@@ -60,8 +77,12 @@ img{
     margin: 1em 0;
     border-radius: 10px;
     box-shadow: 0 0 1em   #aaa;
-    padding: 1em 3em;
+    padding: 2em;
 }
+.output-zone__description--hide{
+    display: none;
+}
+
 .output-zone__contanierimage{
     display: none;
 }

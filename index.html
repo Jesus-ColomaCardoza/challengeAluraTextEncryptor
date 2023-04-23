@@ -15,7 +15,7 @@
         <section class="input-zone">
             <form action="" class="form-text-encryptor" id="form-text-encryptor">
                 <div class="form-text-encryptor__field">
-                    <textarea name="text" id="form-text-encryptor__text" rows="20" class="form-text-encryptor__text" placeholder="Enter text here"></textarea>
+                    <textarea name="text" id="form-text-encryptor__text" rows="10" class="form-text-encryptor__text" placeholder="Enter text here"></textarea>
                 </div>
                 <div class="form-text-encryptor__field">
                     <p class="warning">&#9888 Only lowercase letters and no accents</p>
@@ -27,12 +27,15 @@
             </form>
         </section>
         <section class="output-zone">
-            <div class="output-zone__contanierimage">
-                <img class="output-zone__image" src="img/boy.png" alt="Boy image searching something" >
+            <div class="output-zone__description" id="output-zone__description">
+                <div class="output-zone__contanierimage">
+                    <img class="output-zone__image" src="img/boy.png" alt="Boy image searching something" >
+                </div>
+                <strong class="output-zone__warning">No message was found</strong>
+                <p class="output-zone__message" id="output-zone__message">Enter text You want encrypting or decrypting</p>
             </div>
-            <strong class="output-zone__warning">No message was found</strong>
-            <p class="output-zone__message" id="output-zone__message">Enter text You want encrypting or decrypting</p>
-            <button class="button button--copy">Copy</button>
+            <p class="output-zone__text" id="output-zone__text"></p>
+            <button class="button button--copy" id="button--copy">Copy</button>
         </section>
     </main>
     <script src="js/index.js"></script>

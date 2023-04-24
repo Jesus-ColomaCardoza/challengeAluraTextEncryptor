@@ -13,7 +13,7 @@ formTextEncrypter.addEventListener('click',(e)=>{
     if (e.target.classList.contains('button--encrypt')) {
         let encryptText;      
         if (textArea.value!='') {
-            text=textArea.value.trim();
+            text=textArea.value.trim(); 
             console.log(text);
             if (validateText(text)) {
                 encryptText=encrypt(text);

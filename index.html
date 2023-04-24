@@ -12,13 +12,13 @@
         <h1 class="title">Text Encryptor</h1>
     </header>
     <main class="text-encryptor">
-        <section class="input-zone">
+        <section class="text-encryptor__item input-zone">
             <form action="" class="form-text-encryptor" id="form-text-encryptor">
                 <div class="form-text-encryptor__field">
                     <textarea name="text" id="form-text-encryptor__text" rows="10" class="form-text-encryptor__text" placeholder="Enter text here"></textarea>
                 </div>
                 <div class="form-text-encryptor__field">
-                    <p class="warning">&#9888 Only lowercase letters and no accents</p>
+                    <p class="form-text-encryptor__warning">&#9888 Only lowercase letters and no accents</p>
                 </div>
                 <div class="form-text-encryptor__field">
                     <button class="button button--encrypt" id="encrypt">Encrypt</button>
@@ -26,7 +26,7 @@
                 </div>
             </form>
         </section>
-        <section class="output-zone">
+        <section class="text-encryptor__item output-zone">
             <div class="output-zone__description" id="output-zone__description">
                 <div class="output-zone__contanierimage">
                     <img class="output-zone__image" src="img/boy.png" alt="Boy image searching something" >
@@ -38,6 +38,9 @@
             <button class="button button--copy" id="button--copy">Copy</button>
         </section>
     </main>
+    <!-- <footer class="footer">
+        <p class="footer__copyrigth">Copyrigth</p>
+    </footer> -->
     <script src="js/index.js"></script>
 </body>
 </html>

@@ -3,6 +3,7 @@ const outputText=document.getElementById('output-zone__text');
 const formTextEncrypter=document.getElementById('form-text-encryptor');
 const buttonCopy=document.getElementById('button--copy');
 const outputDescription=document.getElementById('output-zone__description');
+const outputResult=document.getElementById('output-zone__result');
 
 const keys=['ai','enter','imes','ober','ufat'];
 
@@ -21,13 +22,13 @@ formTextEncrypter.addEventListener('click',(e)=>{
             }else{
                 console.log('Incorrect text, strange characters or uppercase letters');
             }
-            hideDescription();
-            showButton(buttonCopy);
+            hideElement(outputDescription);
+            showElement(outputResult);
         }else{
             console.log('Error encrypting, Fill out the field!!!');
             resetOutputText();
-            showDescription();
-            hideButton(buttonCopy);
+            showElement(outputDescription);
+            hideElement(outputResult);
         }
     }else if (e.target.classList.contains('button--decrypt')) {
         let decryptText;      
@@ -39,13 +40,13 @@ formTextEncrypter.addEventListener('click',(e)=>{
             }else{
                 console.log('Incorrect text, strange characters or uppercase letters');
             }
-            hideDescription();
-            showButton(buttonCopy);
+            hideElement(outputDescription);
+            showElement(outputResult);
         }else{
             console.log('Error decrypting, Fill out the field!!!');
             resetOutputText();
-            showDescription();
-            hideButton(buttonCopy);
+            showElement(outputDescription);
+            hideElement(outputResult);
         }
     }
 })
@@ -62,18 +63,12 @@ buttonCopy.addEventListener('click',()=>{
 const resetOutputText=()=>{
     outputText.textContent='';
 }
-const hideDescription=()=>{
-    outputDescription.classList.add('output-zone__description--hide')   
+const hideElement=(element)=>{
+    element.classList.replace('show','hide')   
 }
-const showDescription=()=>{
-    outputDescription.classList.remove('output-zone__description--hide')   
+const showElement=(element)=>{
+    element.classList.replace('hide','show')   
 }
-const showButton=(button)=>{
-    button.classList.add('button--shown');
-}
-const hideButton=(button)=>{
-    button.classList.remove('button--shown');
-}   
 const decrypt=(text)=>{
     let decryptText=text;
     if (decryptText.includes('ai')) {

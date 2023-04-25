@@ -5,11 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Maze&display=swap" rel="stylesheet"> 
     <title>Text encryptor</title>
 </head>
 <body>
-    <header">
-        <h1 class="title">Text Encryptor</h1>
+    <header>
+        <h1 class="title-main">Text Encryptor</h1>
     </header>
     <main class="text-encryptor">
         <section class="text-encryptor__item input-zone">
@@ -27,20 +30,22 @@
             </form>
         </section>
         <section class="text-encryptor__item output-zone">
-            <div class="output-zone__description" id="output-zone__description">
+            <div class="output-zone__description show" id="output-zone__description">
                 <div class="output-zone__contanierimage">
                     <img class="output-zone__image" src="img/boy.png" alt="Boy image searching something" >
                 </div>
                 <strong class="output-zone__warning">No message was found</strong>
                 <p class="output-zone__message" id="output-zone__message">Enter text You want encrypting or decrypting</p>
             </div>
-            <p class="output-zone__text" id="output-zone__text"></p>
-            <button class="button button--copy" id="button--copy">Copy</button>
+            <div class="output-zone__result hide" id="output-zone__result">
+                <textarea class="output-zone__text" id="output-zone__text"></textarea>
+                <button class="button button--copy" id="button--copy">Copy</button>
+            </div>
         </section>
     </main>
-    <!-- <footer class="footer">
-        <p class="footer__copyrigth">Copyrigth</p>
-    </footer> -->
+    <footer class="footer">
+        <p class="footer__copyrigth">&copy Copyrigth 2023 Coloma Cardoza Hellary Jesus</p>
+    </footer>
     <script src="js/index.js"></script>
 </body>
 </html>

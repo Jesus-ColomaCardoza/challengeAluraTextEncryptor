@@ -1,30 +1,54 @@
+:root{
+    --green:#396;
+    --darkblue:#334;
+    
+}
+
 *,::after,::before{
     box-sizing: border-box;
     
 }
 body{
-    margin: 0;;
+    margin: 0;
+    background-image: url('../img/backgroundGreen.png');
+    background-position-y:-10em ;
+    color: #fff;
 }
 img{
     max-width: 100%;;
 }
-.title,.text-encryptor{
+.title-main{
+    font-family: 'Rubik Maze', cursive;
+    font-size: 2rem;
+    margin: 1em 0;
+    color: var(--green);
+}
+.title-main::before{
+    content: '</ ';
+}
+.title-main::after{
+    content: ' >';
+}
+.title-main,.text-encryptor{
     text-align: center;
 }
 .text-encryptor{
     width: 90%;
     margin: 0 auto;
 }
-/* .form-text-encryptor{
-
-}
-
-.form-text-encryptor__field{
-    
-} */
-.form-text-encryptor__text{
+.form-text-encryptor__text,.output-zone__text{
     resize: none;
+    border: none;
+    outline: none;
+    background-color: #2229;
+    color: var(--green);
+}
+.form-text-encryptor__text{
     font-size: 1.8rem;
+}
+.form-text-encryptor__text:focus{
+    border-bottom: .2em var(--green) solid;
+
 }
 .form-text-encryptor__text::placeholder{
     font-size: 1.8rem;
@@ -44,6 +68,7 @@ img{
     font-size: 1em;
     transition: .5s all;
     cursor: pointer;
+    font-weight: bold;
 }
 .button:hover{
     filter: brightness(.9);
@@ -55,24 +80,15 @@ img{
     margin: .5em 0;
 }
 .button--encrypt{
-    background-color: #47d;
+    background-color: var(--green);
     color: #fff;
 }
 .button--decrypt,.button--copy{
-    border: 1px #aaa solid;
-    background-color: #fff;
+    background-color: var(--darkblue);
+    color: #fff;
 }
-.button--copy{
-    display: none;
-}
-.button--shown{
-    display: inline;
-}
+
 /*------------------*/
-
-
-
-
 .output-zone{
     margin: 1em 0;
     border-radius: 10px;
@@ -82,10 +98,6 @@ img{
     flex-direction: column;
     justify-content: space-between;
 }
-.output-zone__description--hide{
-    display: none !important; /*ton try of replace*/
-}
-
 .output-zone__contanierimage{
     display: none;
 }
@@ -95,7 +107,27 @@ img{
 .output-zone__message{
     color: #999;
 }
+.output-zone__text{
+    font-size: 1.5rem;
+    width: 100%;
+}
 
+/*extras classes*/
+.hide{
+    display: none !important; /*to try of replace*/
+}
+.show{
+    display: inline;
+}
+
+/*footer*/
+.footer{
+    margin: 1.5em;
+}
+.footer__copyrigth{
+    margin: 0 auto;
+    text-align: center;
+}
 
 /*768*/
 @media screen and (min-width:768px) {
@@ -112,7 +144,11 @@ img{
 }
 /*1024*/
 @media screen and (min-width:1024px) {
-    .form-text-encryptor__text{
+    .title-main{
+        font-size: 3rem;
+        margin: .5em 0 0 0;
+    }
+    .form-text-encryptor__text,.output-zone__text{
         height: 65vh;
     }
     .output-zone__description{
@@ -130,7 +166,6 @@ img{
     }
     .text-encryptor__item{
         height: 85vh;
-        
     }
     .input-zone{
         width: 55%;
@@ -140,5 +175,5 @@ img{
         width: 30%;
         margin: 0;
     }
-    
+
 }

@@ -9,28 +9,29 @@ const keys=['ai','enter','imes','ober','ufat'];
 
 formTextEncrypter.addEventListener('click',(e)=>{
     e.preventDefault();
-    let text;
-
+    
     if (e.target.classList.contains('button--encrypt')) {
+        let text;
         let encryptText;      
         if (textArea.value!='') {
             text=textArea.value.trim(); 
-            console.log(text);
+            // console.log(text);
             if (validateText(text)) {
                 encryptText=encrypt(text);
                 printOutputZone(encryptText);                
             }else{
-                console.log('Incorrect text, strange characters or uppercase letters');
+                showMessage('Incorrect text, strange characters or uppercase letters');
             }
             hideElement(outputDescription);
             showElement(outputResult);
         }else{
-            console.log('Error encrypting, Fill out the field!!!');
+            showMessage('Error encrypting, Fill out the field!!!');
             resetOutputText();
             showElement(outputDescription);
             hideElement(outputResult);
         }
     }else if (e.target.classList.contains('button--decrypt')) {
+        let text;
         let decryptText;      
         if (textArea.value!='') {
             text=textArea.value.trim()
@@ -38,12 +39,12 @@ formTextEncrypter.addEventListener('click',(e)=>{
                 decryptText=decrypt(text);
                 printOutputZone(decryptText);
             }else{
-                console.log('Incorrect text, strange characters or uppercase letters');
+                showMessage('Incorrect text, strange characters or uppercase letters');
             }
             hideElement(outputDescription);
             showElement(outputResult);
         }else{
-            console.log('Error decrypting, Fill out the field!!!');
+            showMessage('Error decrypting, Fill out the field!!!');
             resetOutputText();
             showElement(outputDescription);
             hideElement(outputResult);
@@ -56,10 +57,13 @@ buttonCopy.addEventListener('click',()=>{
         // console.log(text);
         navigator.clipboard.writeText(text)
     }else{
-        console.log('There is not text');
+        showMessage('There is not text')
     }
 })
 
+const showMessage=(message)=>{
+    alert(message)
+}
 const resetOutputText=()=>{
     outputText.textContent='';
 }

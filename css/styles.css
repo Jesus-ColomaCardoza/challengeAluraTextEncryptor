@@ -108,6 +108,7 @@ img{
     color: #999;
 }
 .output-zone__text{
+    height: 65vh;
     font-size: 1.5rem;
     width: 100%;
 }
@@ -148,7 +149,7 @@ img{
         font-size: 3rem;
         margin: .5em 0 0 0;
     }
-    .form-text-encryptor__text,.output-zone__text{
+    .form-text-encryptor__text{
         height: 65vh;
     }
     .output-zone__description{

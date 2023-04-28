@@ -1,7 +1,7 @@
 # Text Encryptor 
 Alura challenge of Program ONE - Oracle Next Education
 
-> ## Description 
+> ## **Description** 
 This is a page web where We can encrypt messages and to decrypt too, It was developed with Html , CSS and Javascript.
 
 :arrow_right: Challenge rules 
@@ -13,16 +13,35 @@ This is a page web where We can encrypt messages and to decrypt too, It was deve
 
 :arrow_right: Keys
 
+| Letter | Key  |
+|:------:|:----:|
+| a      | ai   |
+| e      | enter|
+| i      | imes |
+| o      | ober |
+| u      | ufat |
 
 
-> ## Visuals
 
-> ## Link
-:globe_with_meridians: [Challenge Text Ecryptor](https://jesus-colomacardoza.github.io/challengeAluraTextEncryptor/)
+> ## **Visuals**
+:desktop_computer: `Computer`
 
-> ## Roadmap
+![Computer](img/webPageDesktop.png)
+
+:computer: `Table`
+
+![Table](img/webPageTable.png)
+
+:iphone: `Movil`
+
+![Movil](img/webPageMovil.png)
+
+> ## **Link**
+* [Challenge Text Ecryptor :globe_with_meridians:](https://jesus-colomacardoza.github.io/challengeAluraTextEncryptor/)
+
+> ## **Roadmap**
 * [v0.1.0](https://github.com/Jesus-ColomaCardoza/challengeAluraTextEncryptor/tags)
 
-> ## Author
- :man_technologist:	 Hellary Jesus Coloma Cardoza
+> ## **Author**
+* Hellary Jesus Coloma Cardoza  :man_technologist:
 

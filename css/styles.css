@@ -1,12 +1,9 @@
 :root{
     --green:#396;
     --darkblue:#334;
-    
 }
-
 *,::after,::before{
     box-sizing: border-box;
-    
 }
 body{
     margin: 0;
@@ -15,7 +12,7 @@ body{
     color: #fff;
 }
 img{
-    max-width: 100%;;
+    max-width: 100%;
 }
 .title-main{
     font-family: 'Rubik Maze', cursive;
@@ -48,7 +45,6 @@ img{
 }
 .form-text-encryptor__text:focus{
     border-bottom: .2em var(--green) solid;
-
 }
 .form-text-encryptor__text::placeholder{
     font-size: 1.8rem;
